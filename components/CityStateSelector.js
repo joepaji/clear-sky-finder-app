@@ -74,6 +74,7 @@ const CityStateSelector = () => {
 				underlineColorAndroid: "transparent",
 				style: styles.textInputContainer,
 				onTextChange: (text) => console.log(text),
+				keyboardAppearance: "dark"
 			}}
 			listProps={{
 				nestedScrollEnabled: true,
