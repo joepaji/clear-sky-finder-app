@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
 	},
 	background: {
 		position: "absolute",
-		zIndex: 0,
 		left: 0,
 		top: 0,
 		width: "200%",
