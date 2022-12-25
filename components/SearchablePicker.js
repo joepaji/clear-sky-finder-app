@@ -44,25 +44,28 @@ export default SearchablePicker;
 
 const styles = StyleSheet.create({
 	pickerContainer: {
-		width: 150,
+		width: 125,
 		overflow: 'hidden'
 	},
 	itemContainer: {
 		paddingHorizontal: 4,
 		paddingVertical: 3,
-		backgroundColor: "transparent",
+		backgroundColor: colors.primary700,
 		borderColor: "#bbb",
-		borderBottomWidth: .2,
-		borderBottomRightRadius: 24,
-		borderBottomLeftRadius: 16,
-		paddingLeft: 20
+		borderBottomWidth: .3,
+		borderTopLeftRadius: 5,
+		borderTopRightRadius: 5,
+		paddingLeft: 10,
+		width: '95%',
+		left: 3,
+
 	},
 	textInputContainer: {
-		paddingTop: 10,
-		marginBottom: 5,
+		paddingTop: 1,
+		marginBottom: 0,
 		borderBottomWidth: 1,
-		borderBottomRightRadius: 20,
-		borderBottomLeftRadius: 20,
+		borderBottomRightRadius: 5,
+		borderBottomLeftRadius: 5,
 		borderColor: colors.accent100,
 		color: colors.accent100,
 		textAlign: 'center'
