@@ -1,27 +1,11 @@
-import csc from "country-state-city";
-import { View, StyleSheet, Keyboard } from "react-native";
+import { StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import SearchableDropdown from "react-native-searchable-dropdown";
 import { GlobalStyles } from "../constants/GlobalStyles";
 
 const colors = GlobalStyles.colors;
 
-const data = [
-	{
-		name: "React",
-		id: 1,
-	},
-	{
-		name: "React Native",
-		id: 2,
-	},
-	{
-		name: "Ionic",
-		id: 3,
-	},
-];
-
-const CityStateSelector = () => {
+const SearchablePicker = ({data, placeholder}) => {
 	const [selected, setSelected] = useState();
 	
 	const selectHandler = (item) => {
@@ -36,19 +20,13 @@ const CityStateSelector = () => {
 		<SearchableDropdown
 			onItemSelect={selectHandler}
 			containerStyle={styles.pickerContainer}
-			onRemoveItem={(item, index) => {
-				const items = this.state.selectedItems.filter(
-					(sitem) => sitem.id !== item.id
-				);
-				this.setState({ selectedItems: items });
-			}}
 			itemStyle={styles.itemContainer}
 			itemTextStyle={styles.itemText}
 			itemsContainerStyle={ true ? { maxHeight: 140 } : {display: 'none'} }
 			items={data}
 			resetValue={false}
 			textInputProps={{
-				placeholder: !selected ? "Country" : selected.name,
+				placeholder: !selected ? placeholder : selected.name,
 				placeholderTextColor: colors.accent100,
 				underlineColorAndroid: "transparent",
 				style: styles.textInputContainer,
@@ -62,7 +40,7 @@ const CityStateSelector = () => {
 	);
 };
 
-export default CityStateSelector;
+export default SearchablePicker;
 
 const styles = StyleSheet.create({
 	pickerContainer: {

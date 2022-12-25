@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
 import { GlobalStyles } from "../constants/GlobalStyles";
 import Button from "./Button";
-import CityStateSelector from "./CityStateSelector";
+import SearchablePicker from "./SearchablePicker";
 import TextInputField from "./TextInputField";
 
 const colors = GlobalStyles.colors;
@@ -25,12 +25,28 @@ function hexToRgbA(hex, transparancy) {
 
 const SearchComponent = () => {
 	let email = "test";
+
+	const data = [
+		{
+			name: "United States",
+			id: 1,
+		},
+		{
+			name: "Canada",
+			id: 2,
+		},
+		{
+			name: "Mexico",
+			id: 3,
+		},
+	];
+
 	return (
 		<View style={styles.containerShadow}>
 			<View style={styles.container}>
 				<View style={styles.inputs}>
 					<View style={{}}>
-						<CityStateSelector />
+						<SearchablePicker data={data} placeholder="Country" />
 					</View>
 					<View style={{}}>
 						<Text>SearchBox</Text>
