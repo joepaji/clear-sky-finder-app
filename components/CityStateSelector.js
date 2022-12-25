@@ -23,7 +23,6 @@ const data = [
 
 const CityStateSelector = () => {
 	const [selected, setSelected] = useState();
-	const [isKeyboardVisible, setKeyboardVisible] = useState(false);
 	
 	const selectHandler = (item) => {
 		setSelected(item);
@@ -32,26 +31,6 @@ const CityStateSelector = () => {
 	useEffect(() => {
 		console.log(selected);
 	}, [selected]);
-
-	useEffect(() => {
-		const keyboardDidShowListener = Keyboard.addListener(
-		  "keyboardDidShow",
-		  () => {
-			setKeyboardVisible(true);
-		  }
-		);
-		const keyboardDidHideListener = Keyboard.addListener(
-		  "keyboardDidHide",
-		  () => {
-			setKeyboardVisible(false);
-		  }
-		);
-	
-		return () => {
-		  keyboardDidHideListener.remove();
-		  keyboardDidShowListener.remove();
-		};
-	  }, []);
 
 	return (
 		<SearchableDropdown
@@ -65,7 +44,7 @@ const CityStateSelector = () => {
 			}}
 			itemStyle={styles.itemContainer}
 			itemTextStyle={styles.itemText}
-			itemsContainerStyle={ isKeyboardVisible ? { maxHeight: 140 } : {display: 'none'} }
+			itemsContainerStyle={ true ? { maxHeight: 140 } : {display: 'none'} }
 			items={data}
 			resetValue={false}
 			textInputProps={{
