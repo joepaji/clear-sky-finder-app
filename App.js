@@ -105,6 +105,6 @@ const styles = StyleSheet.create({
 		left: 0,
 		top: 0,
 		width: "200%",
-		height: "100%",
+		height: 900,
 	},
 });
